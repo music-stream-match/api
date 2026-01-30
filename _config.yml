@@ -1,0 +1,36 @@
+#remote_theme: jekyll/minima
+remote_theme: jekyll/minima@d4d779a
+
+#google_analytics: G-Y20Q9JQGGJ
+
+collections:
+  posts:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+
+exclude:
+  - "_posts"
+
+title: music-stream-match
+
+author:
+  name: music-stream-match
+  email: music-stream-match@mobulum.com
+
+minima:
+  skin: classic
+  social_links:
+    - title: music-stream-match api repository at GitHub
+      icon: github
+      url: "https://github.com/music-stream-match/api"
+
+    - title: Discord server Mobulum/GenAPIre
+      icon: discord
+      url: "https://discord.gg/rwJcE5Zwez"
+
