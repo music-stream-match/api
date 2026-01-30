@@ -1,14 +1,5 @@
 {
-  "_id": 67706195,
-  "title": "Powrócisz tu",
-  "artist": {
-    "id": 4079614,
-    "name": "Irena Santor"
-  },
-  "album": {
-    "id": 67706180,
-    "title": "Piosenki Cz. 1"
-  },
+  "_id": "67706195",
   "providers": [
     {
       "provider": "deezer",
