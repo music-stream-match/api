@@ -1,7 +1,7 @@
 #remote_theme: jekyll/minima
 remote_theme: jekyll/minima@d4d779a
 
-#google_analytics: G-Y20Q9JQGGJ
+google_analytics: G-ZFZJ9E2Q9D
 
 collections:
   posts:
