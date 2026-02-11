@@ -1,8 +1,9 @@
 {
   "id": "14OspenVFI42NxSwtLFWyF",
   "providers": {
-    "tidalTrackId": "362376140",
     "deezerTrackId": "2792724212",
-    "spotifyTrackId": "14OspenVFI42NxSwtLFWyF"
+    "tidalTrackId": "362376140",
+    "spotifyTrackId": "14OspenVFI42NxSwtLFWyF",
+    "appleTrackId": "1731209977"
   }
 }

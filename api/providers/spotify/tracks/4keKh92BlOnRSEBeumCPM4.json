@@ -1,8 +1,9 @@
 {
   "id": "4keKh92BlOnRSEBeumCPM4",
   "providers": {
+    "deezerTrackId": "124351482",
     "tidalTrackId": "62893498",
-    "deezerTrackId": "128418277",
-    "spotifyTrackId": "4keKh92BlOnRSEBeumCPM4"
+    "spotifyTrackId": "4keKh92BlOnRSEBeumCPM4",
+    "appleTrackId": "1133209649"
   }
 }
