@@ -1,8 +1,8 @@
 {
   "id": "0x1WAYvpnPzpi4QS9VjFUu",
   "providers": {
-    "tidalTrackId": "274802006",
     "deezerTrackId": "2134796747",
-    "spotifyTrackId": "04AyZc7lOy7zFLkhqh3Tnw"
+    "tidalTrackId": "274802006",
+    "spotifyTrackId": "0x1WAYvpnPzpi4QS9VjFUu"
   }
 }
