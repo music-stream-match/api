@@ -1,8 +1,9 @@
 {
   "id": "987412262",
   "providers": {
-    "tidalTrackId": "147540887",
     "deezerTrackId": "987412262",
-    "spotifyTrackId": "14nILoctqViY3lqORXiwgU"
+    "tidalTrackId": "147540887",
+    "spotifyTrackId": "14nILoctqViY3lqORXiwgU",
+    "appleTrackId": "1516283324"
   }
 }
