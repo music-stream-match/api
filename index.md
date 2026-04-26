@@ -32,7 +32,7 @@ Switching between music streaming platforms is painful. Playlists, favorites, an
 - **Compare catalogs** to find availability differences
 - **Build universal music apps** that work with any provider
 
-The data is sourced from [yotuna.com](https://yotuna.com) — a free service that matches tracks from radio playlists to specific files across streaming providers. This ensures real-world, high-quality matching based on actual music metadata.
+The data is sourced from [yotuna.mobulum.com](https://yotuna.mobulum.com) — a free service that matches tracks from radio playlists to specific files across streaming providers. This ensures real-world, high-quality matching based on actual music metadata.
 
 # How
 
@@ -41,7 +41,7 @@ The API is a collection of static JSON files. Each file represents a track and c
 ## API Endpoint
 
 ```
-GET https://api.music-stream-match.space/api/providers/{provider}/tracks/{trackId}.json
+GET https://api.music-stream-match.mobulum.com/api/providers/{provider}/tracks/{trackId}.json
 ```
 
 ### Parameters
@@ -72,13 +72,13 @@ A JSON object with the track ID and a `providers` map containing matched IDs:
 **Find Tidal equivalent of a Deezer track:**
 
 ```bash
-curl https://api.music-stream-match.space/api/providers/deezer/tracks/3259841.json
+curl https://api.music-stream-match.mobulum.com/api/providers/deezer/tracks/3259841.json
 ```
 
 **Find Deezer equivalent of a Tidal track:**
 
 ```bash
-curl https://api.music-stream-match.space/api/providers/tidal/tracks/144815.json
+curl https://api.music-stream-match.mobulum.com/api/providers/tidal/tracks/144815.json
 ```
 
 ### Error Handling
