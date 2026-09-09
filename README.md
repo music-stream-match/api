@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Chat-5865F2?logo=discord&logoColor=white)](https://discord.gg/rwJcE5Zwez)
-[![Track Mappings](https://img.shields.io/badge/Tracks-1.46M%2B-blue)](https://api.musica.mobulum.com)
+[![Track Mappings](https://img.shields.io/badge/Tracks-2.09M+%2B-blue)](https://api.musica.mobulum.com)
 
 > Free, open, static REST API for cross-platform music streaming track matching between Spotify, Apple Music, Deezer, and Tidal.
 
@@ -195,11 +195,11 @@ Current verified track mappings in the database:
 
 | Provider | Track Mappings |
 | :--- | :--- |
-| **Apple Music** | 619,678 |
-| **Deezer** | 337,354 |
-| **Tidal** | 327,417 |
-| **Spotify** | 173,217 |
-| **Total Track Mappings** | **1,457,666** |
+| **Apple Music** | 748,985 |
+| **Deezer** | 539,866 |
+| **Tidal** | 504,255 |
+| **Spotify** | 294,457 |
+| **Total Track Mappings** | **2,087,563** |
 
 ---
 
