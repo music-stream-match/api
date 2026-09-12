@@ -188,11 +188,11 @@ Current verified track mappings in the database:
 
 | Provider | Track Mappings |
 | :--- | :--- |
-| **Apple Music** | 748,985 |
-| **Deezer** | 539,866 |
-| **Tidal** | 504,255 |
-| **Spotify** | 294,457 |
-| **Total Track Mappings** | **2,087,563** |
+| **Apple Music** | 757,039 |
+| **Deezer** | 565,730 |
+| **Tidal** | 531,838 |
+| **Spotify** | 304,190 |
+| **Total Track Mappings** | **2,158,797** |
 
 ---
 
