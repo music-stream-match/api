@@ -7,7 +7,7 @@ set -euo pipefail
 # ------------------------- Konfiguracja (env / flagi) -------------------------
 BRANCH="${BRANCH:-main}"
 REMOTE="${REMOTE:-github}"
-BATCH_SIZE="${BATCH_SIZE:-1000}"       # Domyślnie 1000 plików per commit (szybki pack i bezpieczny push)
+BATCH_SIZE="${BATCH_SIZE:-10000}"       # Domyślnie 1000 plików per commit (szybki pack i bezpieczny push)
 PUSH_RETRIES="${PUSH_RETRIES:-5}"
 PUSH_RETRY_DELAY="${PUSH_RETRY_DELAY:-10}"
 COMMIT_MSG="${COMMIT_MSG:-Updated API data}"
