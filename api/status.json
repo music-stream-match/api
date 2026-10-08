@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "updatedAt": "2026-10-04T16:02:44.943Z",
+  "total": 4910008,
+  "totalFormatted": "4,910,008",
+  "badge": "4.91M+",
+  "providers": {
+    "apple": {
+      "count": 1172131,
+      "formatted": "1,172,131"
+    },
+    "deezer": {
+      "count": 1019580,
+      "formatted": "1,019,580"
+    },
+    "tidal": {
+      "count": 1239001,
+      "formatted": "1,239,001"
+    },
+    "spotify": {
+      "count": 1479296,
+      "formatted": "1,479,296"
+    }
+  }
+}

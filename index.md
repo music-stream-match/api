@@ -1,0 +1,254 @@
+---
+layout: home
+title: "Welcome to music-stream-match"
+---
+
+# What
+
+**music-stream-match** is a free, open, static REST API for cross-platform music streaming track matching.
+It provides fast, reliable, and normalized mappings between track identifiers across major music streaming services:
+**Spotify**, **Apple Music**, **Deezer**, and **Tidal**.
+
+You can query the REST API directly using any standard HTTP client and receive clean JSON responses.
+Hosted statically via GitHub Pages and custom CDN for high reliability, maximum speed, and zero rate limits.
+
+Available to everyone, free, forever.
+
+# Why
+
+When building music applications, playlist synchronizers, smart DJ tools, or managing personal digital audio collections,
+you often have a track identifier from one streaming service (e.g., Spotify or Apple Music) and need to locate the equivalent track
+on other services (such as Tidal or Deezer) with high fidelity.
+
+Querying streaming APIs dynamically at runtime introduces high latency, requires maintaining developer accounts and OAuth
+tokens for each platform, and is subject to restrictive rate limits.
+
+**music-stream-match** solves this by pre-resolving and continuously maintaining cross-provider track mappings into a static,
+highly available API structure. No authentication, no tokens, no rate limits — just direct HTTP GET requests.
+
+# How
+
+To use this database, all you need is an HTTP client (like `curl`, `fetch`, `axios`, etc.) capable of making simple GET requests.
+
+### Base URL
+
+```text
+https://api.musica.mobulum.com
+```
+
+Alternative (GitHub Pages):
+```text
+https://music-stream-match.github.io/api
+```
+
+---
+
+## API Endpoints
+
+### 1. Track Resolution
+
+```text
+GET /api/providers/{provider}/tracks/{trackId}.json
+```
+
+Where `{provider}` is one of:
+- `spotify`
+- `apple`
+- `deezer`
+- `tidal`
+
+And `{trackId}` is the provider's native track identifier.
+
+### 2. API Status & Statistics
+
+```text
+GET /api/status.json
+```
+
+Returns database health status, last update timestamp, total track mappings count, badge value, and breakdown per streaming service.
+
+---
+
+## Examples
+
+### 1. Lookup by Spotify Track ID
+
+```bash
+curl "https://api.musica.mobulum.com/api/providers/spotify/tracks/1cEg7nTVIatIQ6UQuZn5Ow.json"
+```
+
+Response:
+
+```json
+{
+  "id": "1cEg7nTVIatIQ6UQuZn5Ow",
+  "providers": {
+    "spotifyTrackId": "1cEg7nTVIatIQ6UQuZn5Ow",
+    "deezerTrackId": "505561852",
+    "tidalTrackId": "89379997",
+    "appleTrackId": "1388093424"
+  }
+}
+```
+
+### 2. Lookup by Apple Music Track ID
+
+```bash
+curl "https://api.musica.mobulum.com/api/providers/apple/tracks/300313670.json"
+```
+
+Response:
+
+```json
+{
+  "id": "300313670",
+  "providers": {
+    "appleTrackId": "300313670",
+    "deezerTrackId": "4085351",
+    "tidalTrackId": "10902798"
+  }
+}
+```
+
+### 3. Lookup by Deezer Track ID
+
+```bash
+curl "https://api.musica.mobulum.com/api/providers/deezer/tracks/100156210.json"
+```
+
+Response:
+
+```json
+{
+  "id": "100156210",
+  "providers": {
+    "deezerTrackId": "100156210",
+    "tidalTrackId": "45465756",
+    "appleTrackId": "993345918"
+  }
+}
+```
+
+### 4. Lookup by Tidal Track ID
+
+```bash
+curl "https://api.musica.mobulum.com/api/providers/tidal/tracks/187760504.json"
+```
+
+Response:
+
+```json
+{
+  "id": "187760504",
+  "providers": {
+    "tidalTrackId": "187760504",
+    "deezerTrackId": "1405085262",
+    "appleTrackId": "1572341403"
+  }
+}
+```
+
+### 5. Check API Status & Total Mappings
+
+```bash
+curl "https://api.musica.mobulum.com/api/status.json"
+```
+
+Response:
+
+```json
+{
+  "status": "ok",
+  "updatedAt": "2026-10-04T08:19:25.116Z",
+  "total": 3538204,
+  "totalFormatted": "3,538,204",
+  "badge": "3.54M+",
+  "providers": {
+    "apple": {
+      "count": 991237,
+      "formatted": "991,237"
+    },
+    "deezer": {
+      "count": 797557,
+      "formatted": "797,557"
+    },
+    "tidal": {
+      "count": 887982,
+      "formatted": "887,982"
+    },
+    "spotify": {
+      "count": 861428,
+      "formatted": "861,428"
+    }
+  }
+}
+```
+
+---
+
+# Response Structure
+
+### Track Resolution Entry
+Each track entry contains:
+- `id` *(string)*: The requested track ID for the specified provider.
+- `providers` *(object)*: Map of matching identifiers across resolved platforms:
+  - `spotifyTrackId` *(string, optional)*
+  - `appleTrackId` *(string, optional)*
+  - `deezerTrackId` *(string, optional)*
+  - `tidalTrackId` *(string, optional)*
+
+If a track is not found, the server returns a standard `404 Not Found`.
+
+### Status Entry (`/api/status.json`)
+- `status` *(string)*: Operational status (e.g. `"ok"`).
+- `updatedAt` *(string)*: ISO 8601 timestamp of the last database statistics update.
+- `total` *(number)*: Total number of track mappings in the database.
+- `totalFormatted` *(string)*: Total number formatted with thousands separators.
+- `badge` *(string)*: Badge value (e.g. `"3.54M+"`).
+- `providers` *(object)*: Map of per-service mapping counts and formatted values (`count`, `formatted`) for `apple`, `deezer`, `tidal`, and `spotify`.
+
+---
+
+# FAQ
+
+**Q: How can I contact you?**  
+**A:** Join the Discord community: [https://discord.gg/rwJcE5Zwez](https://discord.gg/rwJcE5Zwez)
+
+**Q: Do I need an API key or registration?**  
+**A:** No. The API is completely public, static, and requires no API keys or tokens.
+
+**Q: Why a static REST API?**  
+**A:** Static files served via CDN offer unmatched speed, global edge caching, zero infrastructure maintenance, and 100% uptime with no database bottlenecks.
+
+**Q: How often is the database updated?**  
+**A:** The database is continuously updated and pushed from our radio station playlists, crawler pipelines, and audio synchronization tools.
+
+---
+
+# Free, forever
+
+Feel free to use however you like, but please do not sell it. It is FREE for everyone! FOREVER. You can buy me a coffee if you like to thank me:
+
+- [PayPal](https://paypal.me/zenedithPL)
+- [Ko-Fi](https://ko-fi.com/K3K11ABGW5)
+- [Patreon](https://patreon.com/Zenedith)
+
+---
+
+# Stats
+
+Current verified track mappings in the database:
+
+| Provider | Track Mappings |
+| :--- | :--- |
+| **Apple Music** | 1,172,131 |
+| **Deezer** | 1,019,580 |
+| **Tidal** | 1,239,001 |
+| **Spotify** | 1,479,296 |
+| **Total Track Mappings** | **4,910,008** |
+
+---
+
+# License
+
+music-stream-match is licensed under the [MIT License](https://opensource.org/licenses/MIT).
