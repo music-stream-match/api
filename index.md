@@ -33,7 +33,7 @@ To use this database, all you need is an HTTP client (like `curl`, `fetch`, `axi
 ### Base URL
 
 ```text
-https://api.musica.mobulum.com
+https://api-musica.mobulum.com
 ```
 
 Alternative (GitHub Pages):
@@ -74,7 +74,7 @@ Returns database health status, last update timestamp, total track mappings coun
 ### 1. Lookup by Spotify Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/spotify/tracks/1cEg7nTVIatIQ6UQuZn5Ow.json"
+curl "https://api-musica.mobulum.com/api/providers/spotify/tracks/1cEg7nTVIatIQ6UQuZn5Ow.json"
 ```
 
 Response:
@@ -94,7 +94,7 @@ Response:
 ### 2. Lookup by Apple Music Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/apple/tracks/300313670.json"
+curl "https://api-musica.mobulum.com/api/providers/apple/tracks/300313670.json"
 ```
 
 Response:
@@ -113,7 +113,7 @@ Response:
 ### 3. Lookup by Deezer Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/deezer/tracks/100156210.json"
+curl "https://api-musica.mobulum.com/api/providers/deezer/tracks/100156210.json"
 ```
 
 Response:
@@ -132,7 +132,7 @@ Response:
 ### 4. Lookup by Tidal Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/tidal/tracks/187760504.json"
+curl "https://api-musica.mobulum.com/api/providers/tidal/tracks/187760504.json"
 ```
 
 Response:
@@ -151,7 +151,7 @@ Response:
 ### 5. Check API Status & Total Mappings
 
 ```bash
-curl "https://api.musica.mobulum.com/api/status.json"
+curl "https://api-musica.mobulum.com/api/status.json"
 ```
 
 Response:
@@ -241,11 +241,11 @@ Current verified track mappings in the database:
 
 | Provider | Track Mappings |
 | :--- | :--- |
-| **Apple Music** | 1,172,131 |
-| **Deezer** | 1,019,580 |
-| **Tidal** | 1,239,001 |
-| **Spotify** | 1,479,296 |
-| **Total Track Mappings** | **4,910,008** |
+| **Apple Music** | 1,173,111 |
+| **Deezer** | 1,021,026 |
+| **Tidal** | 1,220,969 |
+| **Spotify** | 1,451,564 |
+| **Total Track Mappings** | **4,866,670** |
 
 ---
 

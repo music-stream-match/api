@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Chat-5865F2?logo=discord&logoColor=white)](https://discord.gg/rwJcE5Zwez)
-[![Track Mappings](https://img.shields.io/badge/Tracks-4.91M+%2B-blue)](https://api.musica.mobulum.com)
+[![Track Mappings](https://img.shields.io/badge/Tracks-4.87M+%2B-blue)](https://api-musica.mobulum.com)
 
 > Free, open, static REST API for cross-platform music streaming track matching between Spotify, Apple Music, Deezer, and Tidal.
 
@@ -45,7 +45,7 @@ All you need is an HTTP client (like `curl`, `fetch`, `axios`, etc.) capable of 
 ### Base URL
 
 ```text
-https://api.musica.mobulum.com
+https://api-musica.mobulum.com
 ```
 
 Alternative (GitHub Pages):
@@ -81,7 +81,7 @@ Returns database health status, last update timestamp, total track mappings coun
 ### 1. Lookup by Spotify Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/spotify/tracks/1cEg7nTVIatIQ6UQuZn5Ow.json"
+curl "https://api-musica.mobulum.com/api/providers/spotify/tracks/1cEg7nTVIatIQ6UQuZn5Ow.json"
 ```
 
 Response:
@@ -101,7 +101,7 @@ Response:
 ### 2. Lookup by Apple Music Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/apple/tracks/300313670.json"
+curl "https://api-musica.mobulum.com/api/providers/apple/tracks/300313670.json"
 ```
 
 Response:
@@ -120,7 +120,7 @@ Response:
 ### 3. Lookup by Deezer Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/deezer/tracks/100156210.json"
+curl "https://api-musica.mobulum.com/api/providers/deezer/tracks/100156210.json"
 ```
 
 Response:
@@ -139,7 +139,7 @@ Response:
 ### 4. Lookup by Tidal Track ID
 
 ```bash
-curl "https://api.musica.mobulum.com/api/providers/tidal/tracks/187760504.json"
+curl "https://api-musica.mobulum.com/api/providers/tidal/tracks/187760504.json"
 ```
 
 Response:
@@ -158,7 +158,7 @@ Response:
 ### 5. Check API Status & Total Mappings
 
 ```bash
-curl "https://api.musica.mobulum.com/api/status.json"
+curl "https://api-musica.mobulum.com/api/status.json"
 ```
 
 Response:
@@ -248,11 +248,11 @@ Current verified track mappings in the database:
 
 | Provider | Track Mappings |
 | :--- | :--- |
-| **Apple Music** | 1,172,131 |
-| **Deezer** | 1,019,580 |
-| **Tidal** | 1,239,001 |
-| **Spotify** | 1,479,296 |
-| **Total Track Mappings** | **4,910,008** |
+| **Apple Music** | 1,173,111 |
+| **Deezer** | 1,021,026 |
+| **Tidal** | 1,220,969 |
+| **Spotify** | 1,451,564 |
+| **Total Track Mappings** | **4,866,670** |
 
 ---
 
