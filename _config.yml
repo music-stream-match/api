@@ -1,3 +1,6 @@
+url: "https://api-musica.mobulum.com"
+baseurl: ""
+
 #remote_theme: jekyll/minima
 remote_theme: jekyll/minima@d4d779a
 
@@ -39,4 +42,3 @@ minima:
     - title: Discord server Mobulum/GenAPIre
       icon: discord
       url: "https://discord.gg/rwJcE5Zwez"
-
