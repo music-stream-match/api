@@ -7,12 +7,13 @@ set -euo pipefail
 # ------------------------- Konfiguracja (env / flagi) -------------------------
 BRANCH="${BRANCH:-main}"
 REMOTE="${REMOTE:-github}"
-BATCH_SIZE="${BATCH_SIZE:-10000}"       # Domyślnie 1000 plików per commit (szybki pack i bezpieczny push)
+BATCH_SIZE="${BATCH_SIZE:-10000}"       # Domyślnie 10000 plików per commit
 PUSH_RETRIES="${PUSH_RETRIES:-5}"
 PUSH_RETRY_DELAY="${PUSH_RETRY_DELAY:-10}"
 COMMIT_MSG="${COMMIT_MSG:-Updated API data}"
 TARGET_DIR="/mnt/radiomore/raiomore/compose_projects/music-stream-match-api"
 DRY_RUN=0
+MAX_BATCHES=0
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -20,8 +21,10 @@ while [ $# -gt 0 ]; do
     --batch-size) BATCH_SIZE="$2"; shift ;;
     --branch) BRANCH="$2"; shift ;;
     --remote) REMOTE="$2"; shift ;;
+    --max-batches) MAX_BATCHES="$2"; shift ;;
+    --once) MAX_BATCHES=1 ;;
     -h|--help)
-      echo "Użycie: $0 [--batch-size N] [--branch <branch>] [--remote <remote>] [--dry-run]"
+      echo "Użycie: $0 [--batch-size N] [--branch <branch>] [--remote <remote>] [--max-batches N] [--once] [--dry-run]"
       exit 0
       ;;
     *) echo "Nieznany parametr: $1" >&2; exit 2 ;;
@@ -102,7 +105,7 @@ do_push() {
       return 0
     fi
     log "Push nieudany, próba rebase i ponowienie za ${delay}s..."
-    git pull --rebase "$REMOTE" "$BRANCH" || git rebase --abort 2>/dev/null || true
+    git pull --rebase --autostash "$REMOTE" "$BRANCH" || git rebase --abort 2>/dev/null || true
     sleep "$delay"
     delay=$(( delay * 2 ))
     attempt=$(( attempt + 1 ))
@@ -139,11 +142,16 @@ for chunk in "${CHUNKS[@]}"; do
   END_CHUNK=$(date +%s)
   CHUNK_DURATION=$(( END_CHUNK - START_CHUNK ))
   log "Batch [$idx/$TOTAL_CHUNKS] wysłany w ${CHUNK_DURATION}s."
+
+  if [ "$MAX_BATCHES" -gt 0 ] && [ "$idx" -ge "$MAX_BATCHES" ]; then
+    log "Osiągnięto limit $MAX_BATCHES batchy (--max-batches). Kończę pracę."
+    break
+  fi
 done
 
 END_ALL=$(date +%s)
 TOTAL_DURATION=$(( (END_ALL - START_ALL) / 60 ))
 log "============================================================"
 log "ZAKOŃCZONO POMYŚLNIE w ${TOTAL_DURATION} minut!"
-log "Wysłano $PROCESSED plików w $TOTAL_CHUNKS batchach."
+log "Wysłano $PROCESSED plików w $idx batchach."
 log "============================================================"

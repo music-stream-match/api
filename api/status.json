@@ -1,8 +1,8 @@
 {
   "status": "ok",
-  "updatedAt": "2026-10-08T22:09:56.255Z",
-  "total": 4866670,
-  "totalFormatted": "4,866,670",
+  "updatedAt": "2026-10-10T05:41:44.309Z",
+  "total": 4866845,
+  "totalFormatted": "4,866,845",
   "badge": "4.87M+",
   "providers": {
     "apple": {
@@ -10,16 +10,16 @@
       "formatted": "1,173,111"
     },
     "deezer": {
-      "count": 1021026,
-      "formatted": "1,021,026"
+      "count": 1021058,
+      "formatted": "1,021,058"
     },
     "tidal": {
-      "count": 1220969,
-      "formatted": "1,220,969"
+      "count": 1221051,
+      "formatted": "1,221,051"
     },
     "spotify": {
-      "count": 1451564,
-      "formatted": "1,451,564"
+      "count": 1451625,
+      "formatted": "1,451,625"
     }
   }
 }
