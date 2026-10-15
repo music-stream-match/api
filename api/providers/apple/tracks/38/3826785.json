@@ -3,7 +3,7 @@
   "providers": {
     "deezerTrackId": "11497609",
     "tidalTrackId": "9419526",
-    "appleTrackId": "3826785",
-    "spotify": "74WdD0NrtaCyc4xzaAXVfl"
+    "spotifyTrackId": "74WdD0NrtaCyc4xzaAXVfl",
+    "appleTrackId": "3826785"
   }
 }
